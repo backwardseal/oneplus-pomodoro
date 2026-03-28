@@ -1,0 +1,17 @@
+{
+  "name": "Pomodoro Timer",
+  "short_name": "Focus",
+  "description": "OxygenOS inspired Pomodoro Timer for Digital Detox",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#eb0028",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2972/2972531.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
