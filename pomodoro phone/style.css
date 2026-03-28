@@ -1,0 +1,114 @@
+:root {
+    --op-red: #eb0028;
+    --op-blue: #006ce5;
+    --bg: #000000;
+    --card-glass: rgba(28, 28, 30, 0.6);
+    --radius-lg: 32px; /* Super round OnePlus style */
+    --radius-sm: 20px;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Aquamorphic Blur Element */
+.blur-blob {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 108, 229, 0.2) 0%, transparent 70%);
+    filter: blur(60px);
+    top: 10%;
+    left: 10%;
+    z-index: -1;
+    animation: float 10s infinite alternate ease-in-out;
+}
+
+@keyframes float { from { transform: translate(0,0); } to { transform: translate(100px, 50px); } }
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 60px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notif-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--op-blue);
+    padding: 10px 24px;
+    border-radius: 50px; /* Full pill shape */
+    font-size: 13px;
+    margin-bottom: 40px;
+}
+
+.timer-card {
+    background: var(--card-glass);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg); /* Rounded card */
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.progress-ring { transform: rotate(-90deg); }
+.ring-bg { fill: none; stroke: #2c2c2e; stroke-width: 6; }
+.ring-active {
+    fill: none;
+    stroke: var(--op-red);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: 816;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-content { position: absolute; text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+#timer { font-size: 64px; font-weight: 200; margin: 0; }
+#status-text { font-size: 12px; letter-spacing: 3px; color: #888; margin-top: 5px; }
+
+.controls { width: 100%; margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+
+.main-fab {
+    background: var(--op-red);
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: var(--radius-sm); /* Squircle style */
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.main-fab:active { transform: scale(0.95); }
+
+.secondary-pill {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 12px;
+    border-radius: 50px;
+}
+
+.chip-container { display: flex; gap: 12px; margin-top: 40px; }
+.chip {
+    background: rgba(255,255,255,0.05);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+}
