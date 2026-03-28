@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OxygenOS Focus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blur-blob"></div>
+    <div class="app-container">
+        <button id="notif-btn" class="notif-pill">Enable Alerts</button>
+        
+        <div class="timer-card">
+            <div class="progress-wrapper">
+                <svg class="progress-ring" width="280" height="280">
+                    <circle class="ring-bg" cx="140" cy="140" r="130"></circle>
+                    <circle id="progress-bar" class="ring-active" cx="140" cy="140" r="130"></circle>
+                </svg>
+                <div class="timer-content">
+                    <h1 id="timer">25:00</h1>
+                    <p id="status-text">FOCUS</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="main-fab">Start</button>
+            <button id="reset-btn" class="secondary-pill">Reset</button>
+        </div>
+
+        <div class="chip-container">
+            <button class="chip" onclick="setTimer(25)">Work</button>
+            <button class="chip" onclick="setTimer(5)">Short</button>
+            <button class="chip" onclick="setTimer(15)">Long</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
